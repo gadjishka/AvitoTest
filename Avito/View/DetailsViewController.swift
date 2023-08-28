@@ -348,12 +348,10 @@ class DetailViewController: UIViewController {
     
     
     @objc private func callButtonTapped() {
-        //TODO: Изменить номер с тасиного на реальный
-        //        guard let phoneNumber = phoneNumberLabel.text, !phoneNumber.isEmpty else {
-        //            print("Phone number is empty or invalid")
-        //            return
-        //        }
-        let phoneNumber = "+7 (985) 428-0966"
+        guard let phoneNumber = item?.phone_number, !phoneNumber.isEmpty else {
+            print("Phone number is empty or invalid")
+            return
+        }
         
         let cleanedPhoneNumber = phoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
         if let phoneURL = URL(string: "tel:\(cleanedPhoneNumber)") {
@@ -363,12 +361,10 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func emailButtonTapped() {
-        //TODO: Изменить почту с моей на реальную
-        //        guard let email = emailLabel.text, !email.isEmpty else {
-        //            print("Email is empty or invalid")
-        //            return
-        //        }
-        let email = "basketballgadji@gmail.com"
+        guard let email = item?.email, !email.isEmpty else {
+            print("Email is empty or invalid")
+            return
+        }
         
         if let emailURL = URL(string: "mailto:\(email)") {
             if UIApplication.shared.canOpenURL(emailURL) {
