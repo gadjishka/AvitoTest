@@ -15,8 +15,10 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
+					<key>NSMicrophoneUsageDescription</key>
+					<string>Дай позвонить </string>
+                    <key>UIUserInterfaceStyle</key>
+                    <string>Light</string>
 				</dict>
 			</array>
 		</dict>
